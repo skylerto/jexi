@@ -1,22 +1,26 @@
 package me.skylerlayne.view;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
+import javax.swing.JEditorPane;
 import javax.swing.JFrame;
+import javax.swing.JMenu;
 import javax.swing.JMenuBar;
-import javax.swing.JToolBar;
+import javax.swing.JMenuItem;
 
 import me.skylerlayne.view.listeners.NewActionListener;
+import me.skylerlayne.view.listeners.SaveAsActionListener;
+import javax.swing.JTextPane;
+import javax.swing.text.BadLocationException;
 
-import java.awt.BorderLayout;
-import javax.swing.JPanel;
-import javax.swing.JEditorPane;
-import javax.swing.JMenuItem;
-import javax.swing.JMenu;
-import java.awt.Color;
-
+/**
+ * 
+ * Skyler Layne © Feb 28, 2016
+ *
+ * @version 0.0.1
+ */
 public class MainView {
 
 	private JFrame frame;
@@ -52,12 +56,12 @@ public class MainView {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		JEditorPane editorPane = new JEditorPane();
-		frame.getContentPane().add(editorPane, BorderLayout.CENTER);
-
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(Color.LIGHT_GRAY);
 		frame.setJMenuBar(menuBar);
+
+		JTextPane textPane = new JTextPane();
+		frame.getContentPane().add(textPane, BorderLayout.CENTER);
 
 		JMenu mnFile = new JMenu("File");
 		mnFile.setBackground(Color.LIGHT_GRAY);
@@ -75,6 +79,7 @@ public class MainView {
 
 		JMenuItem mntmSaveAs = new JMenuItem("Save As");
 		mnFile.add(mntmSaveAs);
+		mntmSaveAs.addActionListener(new SaveAsActionListener(mntmSave, textPane));
 
 		JMenuItem mntmExportLatex = new JMenuItem("Export");
 		mnFile.add(mntmExportLatex);
@@ -95,6 +100,7 @@ public class MainView {
 
 		JMenuItem mntmShowHelp = new JMenuItem("Show Help");
 		mnHelp.add(mntmShowHelp);
+
 	}
 
 }

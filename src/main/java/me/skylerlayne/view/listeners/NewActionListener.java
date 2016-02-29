@@ -5,6 +5,11 @@ import java.awt.event.ActionListener;
 
 import me.skylerlayne.view.MainView;
 
+/**
+ * 
+ * @author skyler layne
+ *
+ */
 public class NewActionListener implements ActionListener {
 
 	/**

@@ -7,8 +7,9 @@ import me.skylerlayne.view.MainView;
 
 /**
  * 
- * @author skyler layne
+ * Skyler Layne © Feb 29, 2016
  *
+ * @version 0.0.1
  */
 public class NewActionListener implements ActionListener {
 

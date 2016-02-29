@@ -4,16 +4,15 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 
-import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JTextPane;
 
 import me.skylerlayne.view.listeners.NewActionListener;
+import me.skylerlayne.view.listeners.OpenActionListener;
 import me.skylerlayne.view.listeners.SaveAsActionListener;
-import javax.swing.JTextPane;
-import javax.swing.text.BadLocationException;
 
 /**
  * 
@@ -73,6 +72,7 @@ public class MainView {
 
 		JMenuItem mntmOpen = new JMenuItem("Open");
 		mnFile.add(mntmOpen);
+		mntmOpen.addActionListener(new OpenActionListener(mntmOpen, textPane));
 
 		JMenuItem mntmSave = new JMenuItem("Save");
 		mnFile.add(mntmSave);

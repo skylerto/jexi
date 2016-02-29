@@ -15,6 +15,8 @@ import javax.swing.JTextPane;
 import me.skylerlayne.model.FileFormatter;
 
 /**
+ * `SaveAsActionListener`, the attached listener for the menu bar action `Save
+ * As`.
  * 
  * Skyler Layne © Feb 28, 2016
  *
@@ -48,18 +50,6 @@ public class SaveAsActionListener implements ActionListener {
 			File file = fc.getSelectedFile();
 			FileFormatter fm = new FileFormatter(file);
 			file = fm.getMarkdownFile();
-			
-			
-//			String filename = file.getName();
-//			System.out.println(filename);
-//			String fileExtention = filename.substring(filename.lastIndexOf("."), filename.length());
-//			System.out.println(fileExtention);
-//			filename = filename.substring(0, filename.lastIndexOf("."));
-//			System.out.println(filename);
-//			if (!fileExtention.equals(".md")) {
-//				file = new File(filename + ".md");
-//			}
-
 			try {
 				FileWriter writer = new FileWriter(file);
 				String contents = validate(this.getContents());
@@ -83,7 +73,6 @@ public class SaveAsActionListener implements ActionListener {
 	 * @return - the validated file contents.
 	 */
 	private String validate(String contents) {
-
 		return contents;
 	}
 
